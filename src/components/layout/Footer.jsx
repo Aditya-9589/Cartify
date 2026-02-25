@@ -3,6 +3,7 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 const Footer = () => {
     return (
         <footer className="bg-[var(--bg-light)] mt-16 border-t border-gray-200">
+        {/* // <footer className="bg-[var(--bg-light)] border-t border-gray-200"> */}
             <div className="max-w-7xl mx-auto px-4 py-12">
 
                 {/* Top Grid */}
@@ -40,7 +41,7 @@ const Footer = () => {
                             CUSTOMER SUPPORT
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600">
-                            <li className="hover:text-[var(--primary)]cursor-pointer">Help Center</li>
+                            <li className="hover:text-[var(--primary)] cursor-pointer">Help Center</li>
                             <li className="hover:text-[var(--primary)] cursor-pointer">Shipping</li>
                             <li className="hover:text-[var(--primary)] cursor-pointer">Returns</li>
                             <li className="hover:text-[var(--primary)] cursor-pointer">FAQs</li>

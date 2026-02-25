@@ -1,8 +1,18 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, Search, ShoppingBag, User } from "lucide-react";
+import { useCart } from "../../context/CartContext";
+
 
 const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+
+    const { cartItems } = useCart();
+
+    const totalCartItems = cartItems.reduce(
+        (total, item) => total + item.quantity,
+        0
+    );
 
     return (
         <nav className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
@@ -17,13 +27,16 @@ const Navbar = () => {
                             className="md:hidden"
                             onClick={() => setMobileOpen(!mobileOpen)}
                         >
-                            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+                            {mobileOpen ? <X size={24} /> : <Menu className="cursor-pointer" size={24} />}
                         </button>
 
                         {/* Logo */}
-                        <h1 className="text-2xl font-bold text-[var(--primary)] cursor-pointer">
+                        <Link
+                            to="/"
+                            className="text-2xl font-bold text-[var(--primary)] transition"
+                        >
                             Cartify
-                        </h1>
+                        </Link>
 
                         {/* Desktop Menu */}
                         {/* <div className="hidden lg:flex items-center gap-6 text-sm font-medium text-gray-700"> */}
@@ -52,8 +65,30 @@ const Navbar = () => {
                         </div>
 
                         <div className="flex flex-col items-center text-xs text-gray-700 cursor-pointer hover:text-[var(--primary)]">
-                            <ShoppingBag size={20} />
-                            Cart
+                            {/* <Link
+                                to="/cart"
+                                className="flex flex-col items-center text-xs text-gray-700 hover:text-[var(--primary)] transition"
+                            >
+                                <ShoppingBag size={20} />
+                                Cart
+                            </Link> */}
+
+                            <Link
+                                to="/cart"
+                                className="relative flex flex-col items-center text-xs text-gray-700 hover:text-[var(--primary)] transition"
+                            >
+                                <div className="relative" >
+                                    <ShoppingBag  size={20} />
+
+                                    {totalCartItems > 0 && (
+                                        <span className="absolute -top-2 -right-2 bg-[var(--primary)] text-white text-[0.6rem] font-bold px-1.5 py-0.5 rounded-full min-w-[1.1rem] text-center" >
+                                            {totalCartItems}
+                                        </span>
+                                    )}
+                                </div>
+
+                                Cart
+                            </Link>
                         </div>
                     </div>
                 </div>
