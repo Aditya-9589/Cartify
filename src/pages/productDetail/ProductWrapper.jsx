@@ -7,9 +7,9 @@ import ProductDetail from '../../components/productDetail/ProductDetail'
 const ProductWrapper = () => {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <ProductDetail />
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

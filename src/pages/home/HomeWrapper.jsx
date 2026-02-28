@@ -6,9 +6,9 @@ import Footer from "../../components/layout/Footer"
 const HomeWrapper = () => {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Home />
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

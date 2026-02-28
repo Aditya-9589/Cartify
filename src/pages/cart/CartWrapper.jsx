@@ -6,9 +6,9 @@ import Cart from '../../components/cart/Cart'
 const CartWrapper = () => {
     return (
         <>
-            <Navbar />
+            {/* <Navbar /> */}
             <Cart />
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }

@@ -1,9 +1,10 @@
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <footer className="bg-[var(--bg-light)] mt-16 border-t border-gray-200">
-        {/* // <footer className="bg-[var(--bg-light)] border-t border-gray-200"> */}
+            {/* // <footer className="bg-[var(--bg-light)] border-t border-gray-200"> */}
             <div className="max-w-7xl mx-auto px-4 py-12">
 
                 {/* Top Grid */}
@@ -16,9 +17,11 @@ const Footer = () => {
                         </h3>
                         <ul className="space-y-2 text-sm text-gray-600">
                             <li className="hover:text-[var(--primary)] cursor-pointer">About Us</li>
-                            <li className="hover:text-[var(--primary)] cursor-pointer">Careers</li>
                             <li className="hover:text-[var(--primary)] cursor-pointer">Contact</li>
                             <li className="hover:text-[var(--primary)] cursor-pointer">Terms & Conditions</li>
+                            <li className="hover:text-[var(--primary)] cursor-pointer">
+                                <Link to="/privacy-policy">Privacy Policy</Link>
+                            </li>
                         </ul>
                     </div>
 
